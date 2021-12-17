@@ -1,4 +1,4 @@
-# M2M Quicktour
+# M2M Quick Tour
 
    1. [Capturing and Watching Data](#capturing-and-watching-data)
    2. [Raspberry Pi Remote Control](#raspberry-pi-remote-control)
