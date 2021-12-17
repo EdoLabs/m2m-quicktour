@@ -1,12 +1,12 @@
 # M2M Quick Tour
 
-   1. [Capturing and Watching Data](#capturing-and-watching-data)
+   1. [Client-Server](#client-server)
    2. [Raspberry Pi Remote Control](#raspberry-pi-remote-control)
    3. [Capturing Data from Remote C/C++ Application through IPC (inter-process communication)](https://github.com/EdAlegrid/m2m-ipc-application-demo)
    4. [m2m integration with http web application](https://github.com/EdAlegrid/m2m-web-application-demo)
    5. [m2m integration with websocket  application](https://github.com/EdAlegrid/m2m-websocket-application-demo)
 
-### Capturing and Watching Data
+### Client-Server
 ![](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour.svg?sanitize=true)
 [](quicktour.svg)
 
