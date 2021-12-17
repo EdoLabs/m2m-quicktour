@@ -1,5 +1,5 @@
 # M2M Quicktour
-M2M Quick Tutorial
+
    1. [Capturing and Watching Data](#capturing-and-watching-data)
    2. [Raspberry Pi Remote Control](#raspberry-pi-remote-control)
    3. [Capturing Data from Remote C/C++ Application through IPC (inter-process communication)](https://github.com/EdAlegrid/m2m-ipc-application-demo)
