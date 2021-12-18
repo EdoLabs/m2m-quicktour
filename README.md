@@ -1,7 +1,7 @@
 # M2M Quick Tour
 
    1. [Client-Server](#client-server)
-   2. [Using Browser Client](#using-browser-client)
+   2. [Using a Browser Client](#browser-client)
    3. [Raspberry Pi Remote Control](#raspberry-pi-remote-control)
    4. [Capturing Data from Remote C/C++ Application through IPC (inter-process communication)](https://github.com/EdAlegrid/m2m-ipc-application-demo)
    5. [m2m integration with http web application](https://github.com/EdAlegrid/m2m-web-application-demo)
@@ -171,7 +171,7 @@ getData test-data node-m2m is awesome
 
 ```
 
-### Using Browser Client
+### Browser Client
 
 Using the same device setup from client-server quicktour, we will access the channel data resources using client from the browser. Always use https for encrypted communications between clients and your server.  
 
