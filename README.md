@@ -31,15 +31,24 @@ $ npm install m2m
 ```js
 const m2m = require('m2m');
 
+let testData = 'node-m2m';
+
 // create a device object with a device id of 100
 // this id must must be registered with node-m2m
 let device = new m2m.Device(100);
 
 device.connect(() => {
-  // set a channel data resourse named 'random-number'  
+  // set 'random-number' channel data resourse  
   device.setData('random-number', (data) => {
     let rn = Math.floor(Math.random() * 100);
     data.send(rn);
+  });
+  // set 'test-data' channel data resourse  
+  device.setData('test-data', (data) => {
+    if(data.payload){
+      testData =  data.payload;
+    }
+    data.send(testData);
   });
 });
 ```
@@ -91,13 +100,24 @@ client.connect(() => {
 
   // capture 'random-number' data using a pull method
   device.getData('random-number', (data) => {
-    console.log('random data', data); // 97
+    console.log('getData random-number', data); // 97
   });
 
   // capture 'random-number' data using a push method
   device.watch('random-number', (data) => {
-    console.log('watch random data', data); // 81, 68, 115 ...
+    console.log('watch random-number', data); // 81, 68, 115 ...
   });
+
+  // update test-data
+  device.sendData('test-data', 'node-m2m is awesome', (data) => {
+    console.log('sendData test-data', data);
+  });
+
+  // capture updated test-data
+  device.getData('test-data', (data) => {
+    console.log('getData test-data', data); // node-m2m is awesome
+  });
+
 });
 ```
 
@@ -113,14 +133,25 @@ let client = new m2m.Client();
 client.connect(() => {
 
   // capture 'random-number' data using a pull method
-  client.getData(100, 'random-number', (data) => {
-    console.log('random data', data); // 97
+  client.getData({id:100, channel:'random-number'}, (data) => {
+    console.log('getData random-number', data); // 97
   });
 
   // capture 'random-number' data using a push method
-  client.watch(100, 'random-number', (data) => {
-    console.log('watch random data', data); // 81, 68, 115 ...
+  client.watch({id:100, channel:'random-number'}, (data) => {
+    console.log('watch random-number', data); // 81, 68, 115 ...
   });
+
+  // update test-data
+  client.sendData({id:100, channel:'test-data', payload:'node-m2m is awesome'}, (data) => {
+    console.log('sendData test-data', data);
+  });
+
+  // capture updated test-data
+  client.getData({id:100, channel:'test-data'}, (data) => {
+    console.log('getData test-data', data); // node-m2m is awesome
+  });
+
 });
 ```
 
@@ -132,11 +163,72 @@ Similar with remote device setup, you will be prompted to enter your credentials
 
 You should get a similar output result as shown below.
 ```js
-random data 97
-watch random data 81
-watch random data 68
-watch random data 115
+getData random-number 25
+watch random-number 76
+sendData test-data node-m2m is awesome
+getData test-data node-m2m is awesome
+
 ```
+
+### Using Browser Client
+
+Using the same device setup from client-server quicktour, we will access the channel data resources using client from the browser. Always use https for encrypted communications between clients and your server.  
+
+#### Browser Client Setup
+
+##### 1. Create an access token from [node-m2m](https://www.node-m2m.com/m2m/account/login) website. From the manage security section, you can generate an accces token.
+
+##### 2. Install m2m and copy the minimized file *node-m2m.min.js* from *node_modules/dist* directory.
+
+```js
+$ npm install m2m
+```
+Include it on your HTML `<script src="YOUR_SCRIPT_PATH/node-m2m.min.js"></script>` file. 
+
+##### 3. Save the script below within your server public directory.
+
+```js
+<script> 
+
+// protect your access token at all times  
+var tkn = 'fce454138116159a6ad9a4234e71de810a1087fa9e7fbfda74503d9f52616fc5';
+ 
+var client = new NodeM2M.Client(); 
+
+client.connect({url:"https://www.node-m2m.com", tkn:tkn}, () => {
+
+    client.getData({id:100, channel:'random-number'}, (data) => {
+      console.log('getData random-number', data); // 35
+    });
+
+    client.watch({id:100, channel:'random-number'}, (data) => {
+      console.log('watch random-number', data);
+    });
+    
+    client.sendData({
+      id:100, 
+      channel:'test-data',
+      payload:'node is awesome'}, (data) => {
+      console.log('sendData test-data', data);
+    });
+
+    client.getData({id:100, channel:'test-data'}, (data) => {
+      console.log('getData test-data', data);
+    });
+
+});
+
+</script>
+```
+
+From your browser dev tools, you should get similar results as shown below. 
+```js
+getData random-number 25
+watch random-number 76
+sendData test-data node-m2m is awesome
+getData test-data node-m2m is awesome
+```
+
 
 ### Raspberry Pi Remote Control
 ![](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour2.svg?sanitize=true)
@@ -221,63 +313,3 @@ $ node client.js
 ```
 The led actuator from remote device should toggle on and off as you press the corresponding ON/OFF switches from the client.
 
-## Device Orchestration
-
-### Remote Machine Monitoring
-
-Install array-gpio for each remote machine.
-```js
-$ npm install array-gpio
-```
-#### Server setup
-Configure each remote machine's rpi microcontroller with the following GPIO input/output and channel data resources
-```js
-const { Device } = require('m2m');
-const { setInput, setOutput, watchInput } = require('array-gpio');
-
-const sensor1 = setInput(11); // connected to switch sensor1
-const sensor2 = setInput(13); // connected to switch sensor2
-
-const actuator1 = setOutput(33); // connected to alarm actuator1
-const actuator2 = setOutput(35); // connected to alarm actuator2
-
-// assign 1001, 1002 and 1003 respectively for each remote machine
-const device = new Device(1001);
-
-let status = {};
-
-// Local I/O machine control process
-watchInput(() => {
-  // monitor sensor1
-  if(sensor1.isOn){
-    actuator1.on();
-  }
-  else{
-    actuator1.off();
-  }
-  // monitor sensor2
-  if(sensor2.isOn){
-    actuator2.on();
-  }
-  else{
-    actuator2.off();
-  }
-});
-
-// m2m device application
-device.connect(() => {
-
-  device.setData('machine-status', function(data){
-
-    status.sensor1 = sensor1.state;
-    status.sensor2 = sensor2.state;
-
-    status.actuator1 = actuator1.state;
-    status.actuator2 = actuator2.state;
-
-    console.log('status', status);
-
-    data.send(JSON.stringify(status));
-  });
-});
-```
