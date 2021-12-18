@@ -184,7 +184,7 @@ Using the same device setup from client-server quicktour, we will access the cha
 ```js
 $ npm install m2m
 ```
-Include the `node-m2m.min.js` on your HTML `<script src="YOUR_SCRIPT_PATH/node-m2m.min.js"></script>` file.
+Include *node-m2m.min.js* on your HTML `<script src="YOUR_SCRIPT_PATH/node-m2m.min.js"></script>` file.
 This will create a global **NodeM2M** object.
 
 ##### 3. Save the script below within your server public directory.
@@ -223,7 +223,7 @@ client.connect({url:"https://www.node-m2m.com", tkn:tkn}, () => {
 </script>
 ```
 
-From your browser dev tools, you should get similar results as shown below. 
+Using your browser dev tools, you should get similar results as shown below. 
 ```js
 getData random-number 25
 watch random-number 76
