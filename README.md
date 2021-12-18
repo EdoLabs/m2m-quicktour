@@ -192,7 +192,7 @@ This will create a global **NodeM2M** object.
 ```js
 <script> 
 
-// protect your access token at all times  
+// Protect your access token at all times  
 var tkn = 'fce454138116159a6ad9a4234e71de810a1087fa9e7fbfda74503d9f52616fc5';
  
 var client = new NodeM2M.Client(); 
@@ -204,7 +204,7 @@ client.connect({url:"https://www.node-m2m.com", tkn:tkn}, () => {
     });
 
     client.watch({id:100, channel:'random-number'}, (data) => {
-      console.log('watch random-number', data);
+      console.log('watch random-number', data); // 14, 78, 33
     });
     
     client.sendData({
