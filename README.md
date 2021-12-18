@@ -199,24 +199,25 @@ var client = new NodeM2M.Client();
 
 client.connect({url:"https://www.node-m2m.com", tkn:tkn}, () => {
 
-    client.getData({id:100, channel:'random-number'}, (data) => {
-      console.log('getData random-number', data); // 35
-    });
+  // capture 'random-number' data using a pull method
+  client.getData({id:100, channel:'random-number'}, (data) => {
+    console.log('getData random-number', data); // 97
+  });
 
-    client.watch({id:100, channel:'random-number'}, (data) => {
-      console.log('watch random-number', data); // 14, 78, 33
-    });
-    
-    client.sendData({
-      id:100, 
-      channel:'test-data',
-      payload:'node is awesome'}, (data) => {
-      console.log('sendData test-data', data);
-    });
+  // capture 'random-number' data using a push method
+  client.watch({id:100, channel:'random-number'}, (data) => {
+    console.log('watch random-number', data); // 81, 68, 115 ...
+  });
 
-    client.getData({id:100, channel:'test-data'}, (data) => {
-      console.log('getData test-data', data);
-    });
+  // update test-data
+  client.sendData({id:100, channel:'test-data', payload:'node-m2m is awesome'}, (data) => {
+    console.log('sendData test-data', data);
+  });
+
+  // capture updated test-data
+  client.getData({id:100, channel:'test-data'}, (data) => {
+    console.log('getData test-data', data); // node-m2m is awesome
+  });
 
 });
 
