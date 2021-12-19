@@ -186,7 +186,7 @@ Copy the minimized file `node-m2m.min.js` from `node_modules/dist` directory to 
 Include *node-m2m.min.js* on your HTML `<script src="YOUR_SCRIPT_PATH/node-m2m.min.js"></script>` file.
 This will create a global **NodeM2M** object.
 
-##### 3. Create a client object as shown below to access resources from your remote devices.
+##### 3. Create a client object as shown below to access the resources from your remote devices.
 
 ```js
 <script> 
