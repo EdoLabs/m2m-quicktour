@@ -177,11 +177,11 @@ Using the same device setup from client-server quicktour, we will access the cha
 
 #### Browser Client Setup
 
-##### 1. Create an access token from [node-m2m](https://www.node-m2m.com/m2m/account/login) website. From the manage security section, generate an access token.
+##### 1. [Login](https://www.node-m2m.com/m2m/account/login) to www.node-m2m.com to create an access token. From the manage security section, generate an access token.
 
 ##### 2. Install m2m.
 
-Copy the minimized file `node-m2m.min.js` from `node_modules/m2m/dist` directory to your server javascript directory.
+Copy the minimized file `node-m2m.min.js` from `node_modules/m2m/dist` directory to your server's public javascript directory.
 
 Include *node-m2m.min.js* on your HTML `<script src="YOUR_SCRIPT_PATH/node-m2m.min.js"></script>` file.
 This will create a global **NodeM2M** object.
