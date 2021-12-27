@@ -177,7 +177,7 @@ Using the same device setup from client-server quicktour, we will access the cha
 
 #### Browser Client Setup
 
-##### 1. [Login](https://www.node-m2m.com/m2m/account/login) to **node-m2m** to create an access token. From the manage security section, generate an access token.
+##### 1. [Login](https://www.node-m2m.com/m2m/account/login) to node-m2m to create an access token. From the manage security section, generate an access token.
 
 ##### 2. Install m2m.
 
