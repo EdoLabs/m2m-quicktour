@@ -173,11 +173,11 @@ getData test-data node-m2m is awesome
 
 ### Browser Client
 
-Using the same device setup from client-server quicktour, we will access the channel data resources using client from the browser. Always use https for encrypted communications between clients and your server.  
+Using the same device setup from client-server quicktour, we will access the channel data resources using a client from the browser. Always use https for encrypted communications between clients and your server.  
 
 #### Browser Client Setup
 
-##### 1. [Login](https://www.node-m2m.com/m2m/account/login) to www.node-m2m.com to create an access token. From the manage security section, generate an access token.
+##### 1. [Login](https://www.node-m2m.com/m2m/account/login) to **node-m2m** to create an access token. From the manage security section, generate an access token.
 
 ##### 2. Install m2m.
 
