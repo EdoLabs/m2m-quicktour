@@ -177,16 +177,17 @@ Using the same device setup from client-server quicktour, we will access the cha
 
 #### Browser Client Setup
 
-##### 1. [Login](https://www.node-m2m.com/m2m/account/login) to node-m2m to create an access token. From the manage security section, generate an access token.
+##### 1. Login to [node-m2m](https://www.node-m2m.com/m2m/account/login) to create an access token. From the manage security section, generate an access token.
 
 ##### 2. Install m2m.
 
 Copy the minimized file `node-m2m.min.js` from `node_modules/m2m/dist` directory to your server's public javascript directory.
 
-Include *node-m2m.min.js* on your HTML `<script src="YOUR_SCRIPT_PATH/node-m2m.min.js"></script>` file.
+Include `node-m2m.min.js` on your HTML file `<script src="YOUR_SCRIPT_PATH/node-m2m.min.js"></script>`.
 This will create a global **NodeM2M** object.
 
-##### 3. Create a client object as shown below to access the resources from your remote devices.
+##### 3. Create a client object instance from the global NodeM2M object.
+You can now access the resources from your remote devices from the various available methods from the client instance as shown below.
 
 ```js
 <script> 
@@ -196,7 +197,7 @@ var tkn = 'fce454138116159a6ad9a4234e71de810a1087fa9e7fbfda74503d9f52616fc5';
  
 var client = new NodeM2M.Client(); 
 
-client.connect({url:"https://www.node-m2m.com", tkn:tkn}, () => {
+client.connect(tkn, () => {
 
   // capture 'random-number' data using a pull method
   client.getData({id:100, channel:'random-number'}, (data) => {
