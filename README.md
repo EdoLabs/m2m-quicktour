@@ -5,7 +5,8 @@
    3. [Raspberry Pi Remote Control](#raspberry-pi-remote-control)
    4. [Capturing Data from Remote C/C++ Application through IPC (inter-process communication)](https://github.com/EdAlegrid/m2m-ipc-application-demo)
    5. [m2m integration with http web application](https://github.com/EdAlegrid/m2m-web-application-demo)
-   <!--6. [m2m integration with websocket  application](https://github.com/EdAlegrid/m2m-websocket-application-demo)-->
+   5. [m2m browser client http web application](https://github.com/EdAlegrid/m2m-browser-client-demo)
+
 
 ### Client-Server
 ![](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour.svg?sanitize=true)
@@ -231,7 +232,8 @@ watch random-number 76
 sendData test-data node-m2m is awesome
 getData test-data node-m2m is awesome
 ```
-
+Check the quicktour below for creating a web application using m2m browser client.
+[m2m browser client http web application](https://github.com/EdAlegrid/m2m-browser-client-demo)
 
 ### Raspberry Pi Remote Control
 ![](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour2.svg?sanitize=true)
