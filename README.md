@@ -4,8 +4,8 @@
    2. [Using a Browser Client](#browser-client)
    3. [Raspberry Pi Remote Control](#raspberry-pi-remote-control)
    4. [Monitor Data from Remote C/C++ Application through IPC (inter-process communication)](https://github.com/EdAlegrid/cpp-ipc-application-demo)
-   5. [m2m integration with http web application](https://github.com/EdAlegrid/m2m-web-application-demo)
-   5. [http web application using only a browser client](https://github.com/EdAlegrid/m2m-browser-client-demo)
+   5. [Integration with http web application](https://github.com/EdAlegrid/m2m-web-application-demo)
+   5. [Http web application using only a browser client](https://github.com/EdAlegrid/m2m-browser-client-demo)
    6. [Monitor Data from Remote C# Application through IPC (inter-process communication)](https://github.com/EdAlegrid/csharp-ipc-application-demo)
 
 
