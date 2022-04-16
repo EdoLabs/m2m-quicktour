@@ -46,6 +46,7 @@ device.connect(() => {
     let rn = Math.floor(Math.random() * 100);
     data.send(rn);
   });
+  
   // set 'test-data' channel data resource  
   device.setData('test-data', (data) => {
     if(data.payload){
@@ -107,7 +108,7 @@ client.connect(() => {
   });
 
   // capture 'random-number' data using a push method
-  device.watch('random-number', (data) => {
+  device.watchData('random-number', (data) => {
     console.log('watch random-number', data); // 81, 68, 115 ...
   });
 
@@ -141,7 +142,7 @@ client.connect(() => {
   });
 
   // capture 'random-number' data using a push method
-  client.watch({id:100, channel:'random-number'}, (data) => {
+  client.watchData({id:100, channel:'random-number'}, (data) => {
     console.log('watch random-number', data); // 81, 68, 115 ...
   });
 
@@ -206,7 +207,7 @@ client.connect(tkn, () => {
   });
 
   // capture 'random-number' data using a push method
-  client.watch({id:100, channel:'random-number'}, (data) => {
+  client.watchData({id:100, channel:'random-number'}, (data) => {
     console.log('watch random-number', data); // 81, 68, 115 ...
   });
 
