@@ -8,7 +8,6 @@
    5. [Http web application using only a browser client](https://github.com/EdAlegrid/m2m-browser-client-demo)
    6. [Monitor Data from Remote C# Application through IPC (inter-process communication)](https://github.com/EdAlegrid/csharp-ipc-application-demo)
 
-
 ### Client-Server
 [](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour.svg?sanitize=true)
 ![](quicktour.svg)
