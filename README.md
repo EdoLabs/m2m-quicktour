@@ -13,8 +13,8 @@
 
 ---
 ### Client-Server
-[](quicktour.svg)
-![](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour.svg?sanitize=true)
+![](quicktour.svg)
+[](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour.svg?sanitize=true)
 
 In this quick tour, we will create a simple server application that generates random numbers as its sole service and a client application that will access the random numbers using a *pull* and *push* method.
 
