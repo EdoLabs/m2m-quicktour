@@ -13,7 +13,7 @@
 
 ---
 ### Client-Server
-![](/assets/quicktour.svg)
+![](assets/quicktour.svg)
 [](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour.svg?sanitize=true)
 In this quick tour, we will create a simple server application that generates random numbers as its sole service and a client application that will access the random numbers using a *pull* and *push* method.
 
@@ -244,7 +244,7 @@ Check the [m2m browser client web application quick tour](https://github.com/EdA
 <br>
 
 ### Raspberry Pi Remote Control
-![](/assets/quicktour2.svg)
+![](assets/quicktour2.svg)
 [](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour2.svg?sanitize=true)
 
 In this quick tour, we will install two push-button switches ( GPIO pin 11 and 13 ) on the remote client, and an led actuator ( GPIO pin 33 ) on the remote device.
