@@ -1,16 +1,20 @@
 # M2M Quick Tour
-
    1. [Client-Server](#client-server)
-   2. [Using a Browser Client](#browser-client)
+   2. [Using a Browser Client](#using-a-browser-client)
    3. [Raspberry Pi Remote Control](#raspberry-pi-remote-control)
    4. [Monitor Data from Remote C/C++ Application through IPC (inter-process communication)](https://github.com/EdAlegrid/cpp-ipc-application-demo)
    5. [Integration with http web application](https://github.com/EdAlegrid/m2m-web-application-demo)
    5. [Http web application using only a browser client](https://github.com/EdAlegrid/m2m-browser-client-demo)
    6. [Monitor Data from Remote C# Application through IPC (inter-process communication)](https://github.com/EdAlegrid/csharp-ipc-application-demo)
 
+<br>
+
+[API Reference](https://github.com/EdAlegrid/m2m-api)
+
+---
 ### Client-Server
-[](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour.svg?sanitize=true)
-![](quicktour.svg)
+[](quicktour.svg)
+![](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour.svg?sanitize=true)
 
 In this quick tour, we will create a simple server application that generates random numbers as its sole service and a client application that will access the random numbers using a *pull* and *push* method.
 
@@ -170,10 +174,12 @@ getData random-number 25
 watch random-number 76
 sendData test-data node-m2m is awesome
 getData test-data node-m2m is awesome
-
 ```
 
-### Browser Client
+<br>
+
+### Using A Browser Client
+<br>
 
 Using the same device setup from client-server quicktour, we will access the channel data resources using a client from the browser.
 #### Browser Client Setup
@@ -239,8 +245,8 @@ Check the [m2m browser client web application quick tour](https://github.com/EdA
 <br>
 
 ### Raspberry Pi Remote Control
-![](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour2.svg?sanitize=true)
-[](quicktour.svg)
+![](quicktour.svg)
+[](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour2.svg?sanitize=true)
 
 In this quick tour, we will install two push-button switches ( GPIO pin 11 and 13 ) on the remote client, and an led actuator ( GPIO pin 33 ) on the remote device.
 
