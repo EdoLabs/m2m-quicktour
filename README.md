@@ -6,6 +6,7 @@
    5. [Integration with http web application](https://github.com/EdAlegrid/m2m-web-application-demo)
    5. [Http web application using only a browser client](https://github.com/EdAlegrid/m2m-browser-client-demo)
    6. [Monitor Data from Remote C# Application through IPC (inter-process communication)](https://github.com/EdAlegrid/csharp-ipc-application-demo)
+   7. [Gateway Load Balancer](https://github.com/EdAlegrid/csharp-ipc-application-demo)
 
 <br>
 
