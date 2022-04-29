@@ -16,11 +16,11 @@
 ### Client-Server
 ![](assets/quicktour.svg)
 [](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour.svg?sanitize=true)
-In this quick tour, we will create a simple server application that generates random numbers as its sole service and a client application that will access the random numbers using a *pull* and *push* method.
+In this quick tour, we will create a simple server application that generates random numbers as its sole service and a client application that will access the random number using a *pull* and *push* method.
 
-Using a *pull-method*, the client will capture the random numbers as one time function call.
+Using a *pull-method*, the client will capture the random number as one time function call.
 
-Using a *push-method*, the client will watch the value of the random numbers. The remote device will check the random value every 5 seconds. If the value changes, it will send or *push* the new value to the client.   
+Using a *push-method*, the client will watch the value of the random number. The remote device will check the random value every 5 seconds. If the value changes, it will send or *push* the new value to the client.   
 
 Before you start, [create an account](https://www.node-m2m.com/m2m/account/create) and register your remote device. You also need a [node.js](https://nodejs.org/en/) installation on your client and device computers.
 
@@ -74,9 +74,9 @@ The first time you run your application, it will ask for your full credentials.
 ```
 The next time you run your application, it will start automatically using a saved user token.
 
-However, after a grace period of 15 minutes, you need to provide your *security code* to restart your application.
+However, after a grace period of 15 minutes, you may need to provide your *security code* to restart your application.
 
-Also at anytime, you can re-authenticate with an *-r* flag with full credentials if you're having difficulty or issues restarting your application as shown below.
+Also at anytime, if you're having difficulty or issues restarting your application, you can re-authenticate with an *-r* flag and this will refresh your token as shown below.
 ```js
 $ node device.js -r
 ```
