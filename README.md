@@ -84,7 +84,7 @@ $ node device.js -r
 
 ### Remote Client Setup
 
-##### 1. Create a client project directory and install m2m inside the directory.
+#### 1. Create a client project directory and install m2m inside the directory.
 
 ```js
 $ npm install m2m
