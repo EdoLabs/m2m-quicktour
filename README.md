@@ -4,8 +4,8 @@
    3. [Raspberry Pi Remote Control](#raspberry-pi-remote-control)
    4. [Client-Server Using HTTP Api](https://github.com/EdAlegrid/http-api)
    5. [Monitor Data from Remote C/C++ Application through IPC (inter-process communication)](https://github.com/EdAlegrid/cpp-ipc-application-demo)
-   6. [Integration with http web application](https://github.com/EdAlegrid/m2m-web-application-demo)
-   7. [Http web application using only a browser client](https://github.com/EdAlegrid/m2m-browser-client-demo)
+   6. [Web application demo using the fetch api](https://github.com/EdAlegrid/m2m-web-application-demo)
+   7. [Web application demo using only an m2m browser client](https://github.com/EdAlegrid/m2m-browser-client-demo)
    8. [Monitor Data from Remote C# Application through IPC (inter-process communication)](https://github.com/EdAlegrid/csharp-ipc-application-demo)
    9. [Create A Simple Gateway Load Balancer](https://github.com/EdAlegrid/gateway-load-balancer)
 
