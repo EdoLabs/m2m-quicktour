@@ -1,4 +1,4 @@
-# M2M Quick Tour
+# Node-M2M Quick Tour
    1. [Client-Server Using Channel Api](#client-server-using-channel-api)
    2. [Using a Browser Client](#using-a-browser-client)
    3. [Raspberry Pi Remote Control](#raspberry-pi-remote-control)
